@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F4F8;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1; /* Permite que el body ocupe el espacio restante */
+}
+
+.menu {
+    width: 250px;
+    background-color: #003366;
+    color: white;
+    position: fixed; /* Mantener el menú fijo */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Asegúrate de que ocupe toda la altura de la ventana */
+
+}
+
+.menu.open {
+    display: block; /* Muestra el menú cuando está abierto */
+}
+
+.menu-header {
+    background-color: #f35555;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000; /* Asegúrate de que el botón esté por encima de otros elementos */
+    position: relative; /* Asegúrate de que el botón sea visible */
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-items li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    padding: 15px;
+}
+
+.menu-items a:hover {
+    background-color: #f35555;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    float: right;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+}
+
+.submenu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu a {
+    padding: 10px 20px;
+}
+
+.menu.open .menu-items {
+    display: block;
+}
+
+.menu-items .dropdown:hover .submenu {
+    display: block;
+}
+
+
+
+main {
+    margin-left: 150px; /* Asegúrate de que coincida con el ancho del menú */
+    padding: 20px;
+    flex: 1;
+    min-height: calc(100vh - 100px); /* Ajusta según la altura del footer */
+}
+
+.service-section {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.service-section h2 {
+    text-align: center;
+    width: calc(10% 200px);
+    margin-left: 250px;
+    margin-right: 80px;
+    background-color: #f35555;
+    color: #FFFFFF;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.products-container {
+    display: flex; 
+    justify-content: center; /* Alinea los productos al inicio */
+    flex-wrap: wrap; /* Permite que los productos se envuelvan si no hay espacio */
+    margin: 50px 60; /* Espacio arriba y abajo de la sección de productos */
+    margin-left: 200px; /* Ajusta este valor para mover hacia la izquierda */
+}
+
+.product {
+    border: 1px solid #ccc;
+    /* Borde alrededor de cada producto */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centrar texto */
+    cursor: pointer;
+    /* Cambiar cursor al pasar el mouse */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transición suave para el hover */
+    width: 200px;
+    /* Ancho fijo para los productos */
+    margin: 10px;
+    /* Espacio entre productos ---------------- de los productos de categoria  */
+    background-color: #FFFFFF;
+    /* Fondo blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidad */
+}
+
+.product-image {
+    width: 100%;
+    /* Ancho completo de la imagen */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+    border-radius: 5px;
+    /* Bordes redondeados para la imagen */
+}
+
+
+
+
+
+.imagen-bienvenida {
+    width: 200%; /* Ajusta el ancho de la imagen en pantallas pequeñas */
+}
+
+
+
+.service-section {
+    padding: 10px; /* Reduce el padding para que se ajuste mejor */
+}
+
+.footer-content {
+    padding: 0 30px; /* Agrega padding en los lados del footer */
+}
+
+.trabajos-container {
+    flex-direction: column; /* Cambia la dirección del flex a columna para apilar trabajos */
+    align-items: center; /* Centra los trabajos en la pantalla */
+}
+
+.trabajo {
+    width: 100%; /* Los trabajos ocuparán el 100% del ancho */
+    margin: 10px 0; /* Espacio vertical entre trabajos */
+}
+    
+    
+    
+
+
+.product-submenu {
+    list-style: none;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 150px;
+}
+
+.product-submenu li {
+    margin: 5px;
+}
+
+.product-submenu a {
+    text-decoration: none;
+    background-color: #F0F4F8;
+    color: #333333;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-submenu a:hover {
+    background-color: #f35555;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#imagenProducto {
+    width: 100%;
+    height: auto;
+    
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.imagen-bienvenida {
+    max-width: 100%;
+    height: 300px;
+    width: 20%;
+    margin: 0 auto;
+    display: block;
+}
+
+.imagen-bienvenida:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#bienvenida {
+    text-align: center;
+    padding: 30px;  
+    border-radius: 15px;
+    margin-bottom: -30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}   
+
+
+.trabajos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.trabajo {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.trabajo:hover {
+    transform: translateY(-5px);
+}
+
+.trabajo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.trabajo-details {
+    padding: 15px;
+}
+
+.trabajo-details h3 {
+    margin-bottom: 10px;
+    color: #203864;
+}
+
+.trabajo-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.footer {
+    background-color: #F0F4F8;
+    color: #333;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.icon-container {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.custom-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+.icon-container {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
+.tooltip {
+    display: inline-block;
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: attr(title);
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    top: 100%;
+    /* Ajusta según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    flex: 1; /* Permite que el body ocupe el espacio restante */
+}
+
+main {
+    flex: 1; /* Permite que el main ocupe el espacio restante */
+}
+
+.p {
+    text-align: center; /* Centra el texto */
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 500px; /* Ancho máximo del párrafo */
+    margin: 10px auto 0; /* Auto para centrar horizontalmente */
+    color: #333;
+}
+
+
